@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary1">#00A8C0</color>
+    <color name="colorPrimaryDark1">#00574B</color>
+    <color name="colorAccent1">#E1DB6373</color>
+    <color name="colorLayout1">#AAAAAA</color>
+    <color name="colorLayout2">#DDDDDD</color>
+    <color name="placeholder_bg">#dddddd</color>
+    <color name="colorDark">#3A3E41</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="den">#000000</color>
+    <color name="trang">#FFFFFF</color>
+
+    <array name="array_dot_active">
+        <item>@color/colorLayout1</item>
+        <item>@color/colorLayout1</item>
+        <item>@color/colorLayout1</item>
+        <item>@color/colorLayout1</item>
+    </array>
+
+    <array name="array_dot_inactive">
+        <item>@color/colorLayout2</item>
+        <item>@color/colorLayout2</item>
+        <item>@color/colorLayout2</item>
+        <item>@color/colorLayout2</item>
+    </array>
+
+</resources>

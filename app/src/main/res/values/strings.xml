@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">DuAn_Dat_Ban</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="banquyen">© Bản quyền 2019 Coffee House</string>
+    <string name="layout1a">Chào mừng bạn đến với NASA</string>
+    <string name="layout1b">Nhà hàng khách sạn tuyệt vời, giúp bạn tận hưởng nhiều món ăn ngon</string>
+    <string name="layout2a">Thông tin chuẩn xác</string>
+    <string name="layout2b">Đọc đánh giá từ hàng triệu nhà hàng,khách sạn từ những khách hàng như bạn</string>
+    <string name="layout3a">An tâm đặt bàn</string>
+    <string name="layout3b">Đặt bàn nhà hàng, khách sạn. Chúng tôi đã kiểm tra hơn 200 trang web để tìm cho bạn giá nhà hàng tốt nhất</string>
+    <string name="layout4a">Tha hồ ăn uống</string>
+    <string name="layout4b">Khi đăng ăn ở nhà hàng, hãy tận hưởng những món ăn ngon chỉ có tại nhà hàng</string>
+    <string name="title_activity_main3">Main3Activity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+</resources>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context=".SuaNHActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <android.support.design.widget.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/AppTheme.AppBarOverlay">
+                <android.support.v7.widget.Toolbar
+                    app:title="Coffee House"
+                    android:id="@+id/toolbarSuaNH"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="?attr/colorPrimary"
+                    app:layout_scrollFlags="scroll|enterAlways"
+                    app:popupTheme="@style/AppTheme.PopupOverlay" />
+            </android.support.design.widget.AppBarLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/imgAnhSuaNH"
+                    android:scaleType="centerCrop"
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp" />
+                <ImageView
+                    android:id="@+id/imgThemAnhSuaNH"
+                    android:layout_margin="10dp"
+                    android:layout_alignBottom="@+id/imgAnhSuaNH"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_menu_camera"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp" />
+            </RelativeLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/tiSuaTenNH"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:hint="Số bàn">
+                <android.support.design.widget.TextInputEditText
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:id="@+id/edSuaTenNH"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:paddingRight="20dp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/tiSuaDiaChi"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:hint="Tầng">
+                <android.support.design.widget.TextInputEditText
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:id="@+id/edSuaDiachi"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:paddingRight="20dp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/tiSuaMonAn"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:hint="Loại bàn">
+                <android.support.design.widget.TextInputEditText
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:id="@+id/edSuaMonAn"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:paddingRight="20dp" />
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/tiSuaGiatien"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:hint="Máy lạnh">
+                <android.support.design.widget.TextInputEditText
+                    android:lines="1"
+                    android:inputType="text"
+                    android:id="@+id/edSuaGiatien"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:paddingRight="20dp" />
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/tiSuaDanhgia"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:hint="Đánh giá">
+                <android.support.design.widget.TextInputEditText
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:inputType="number"
+                    android:digits="12345"
+                    android:id="@+id/edSuaDanhgia"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:paddingRight="20dp" />
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/tiSuaMota"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:hint="Mô tả">
+                <android.support.design.widget.TextInputEditText
+                    android:gravity="top"
+                    android:lines="5"
+                    android:maxLines="5"
+                    android:id="@+id/edSuaMota"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="20dp" />
+            </android.support.design.widget.TextInputLayout>
+            <Button
+                android:id="@+id/btnSuaNH"
+                android:textColor="@android:color/white"
+                android:textAllCaps="false"
+                android:text="Lưu lại"
+                android:layout_margin="@dimen/padding_10"
+                android:background="@drawable/btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </ScrollView>
+    <include
+        android:visibility="gone"
+        android:id="@+id/menu_progressbarSuaNH"
+        layout="@layout/progressbar">
+    </include>
+</RelativeLayout>

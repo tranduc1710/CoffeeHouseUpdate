@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg"
+    android:layout_height="match_parent"
+    tools:context=".SuaBanAnActivity">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
+            <android.support.v7.widget.Toolbar
+                app:title="Coffee House"
+                android:id="@+id/toolbarSuaBA"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+        </android.support.design.widget.AppBarLayout>
+        <ImageView
+            android:id="@+id/imgAnhNHSBA"
+            android:scaleType="centerCrop"
+            android:layout_width="match_parent"
+            android:layout_height="170dp" />
+        <TextView
+            android:id="@+id/tvNameNHSBA"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:text="Coffee House"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/tiSoban"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:hint="Tên">
+            <android.support.design.widget.TextInputEditText
+                android:lines="1"
+                android:maxLines="1"
+                android:inputType="number"
+                android:id="@+id/edSuaSoban"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingRight="20dp" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/tiSonguoi"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:hint="Giá">
+            <android.support.design.widget.TextInputEditText
+                android:lines="1"
+                android:maxLines="1"
+                android:inputType="number"
+                android:id="@+id/edSuaSonguoi"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingRight="20dp" />
+        </android.support.design.widget.TextInputLayout>
+        <RadioGroup
+            android:layout_margin="@dimen/padding_10"
+            android:weightSum="2"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:checked="true"
+                android:layout_weight="1"
+                android:id="@+id/radioSuaBuatrua"
+                android:text="Đồ uống"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:layout_weight="1"
+                android:id="@+id/radioSuaBuatoi"
+                android:text="Đồ ăn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+        </RadioGroup>
+        <Button
+            android:layout_gravity="center"
+            android:id="@+id/btnSuaBan"
+            android:layout_margin="@dimen/padding_10"
+            android:background="@drawable/btn_login"
+            android:textColor="@android:color/white"
+            android:textAllCaps="false"
+            android:text="Lưu lại"
+            android:layout_width="242dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <include
+        android:visibility="gone"
+        android:id="@+id/menu_progressbarSuaBan"
+        layout="@layout/progressbar">
+    </include>
+</RelativeLayout>

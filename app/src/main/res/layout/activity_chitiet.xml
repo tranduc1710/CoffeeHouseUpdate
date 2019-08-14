@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg1"
+    android:orientation="vertical"
+    tools:context=".ChitietActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbarChitiet"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <TextView
+                    android:id="@+id/tvTiltle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9"
+                    android:text="Coffee House"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+                <!--<ImageView-->
+                <!--android:id="@+id/imgTym"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="1"-->
+                <!--android:visibility="invisible" />-->
+            </LinearLayout>
+
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="10">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="9">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imgChitiet"
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ban" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/padding_10"
+                    android:layout_marginTop="180dp"
+                    android:text="Bàn số: "
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvNameChitiet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/imgChitiet"
+                    android:layout_marginLeft="@dimen/padding_10"
+                    android:layout_marginTop="@dimen/padding_10"
+                    android:layout_marginRight="110dp"
+                    android:paddingLeft="80dp"
+                    android:text="201"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/imgsaochi1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_below="@+id/imgChitiet"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="12dp"
+                    android:paddingLeft="207dp"
+                    app:srcCompat="@drawable/ic_sao_den" />
+
+                <ImageView
+                    android:id="@+id/imgsaochi2"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_below="@+id/imgChitiet"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="70dp"
+                    app:srcCompat="@drawable/ic_sao_den" />
+
+                <ImageView
+                    android:id="@+id/imgsaochi3"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_below="@+id/imgChitiet"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="50dp"
+                    app:srcCompat="@drawable/ic_sao_den" />
+
+                <ImageView
+                    android:id="@+id/imgsaochi4"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_below="@+id/imgChitiet"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="30dp"
+                    app:srcCompat="@drawable/ic_sao_den" />
+
+                <ImageView
+                    android:id="@+id/imgsaochi5"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_below="@+id/imgChitiet"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="10dp"
+                    app:srcCompat="@drawable/ic_sao_den" />
+
+                <TextView
+                    android:id="@+id/tvDiachitiet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvNameChitiet"
+                    android:layout_marginLeft="@dimen/padding_10"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="@dimen/padding_10"
+                    android:text="Tầng"
+                    android:textColor="@color/den"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvMonanchiet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvDiachitiet"
+                    android:layout_marginLeft="@dimen/padding_10"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="@dimen/padding_10"
+                    android:text="Loại bàn"
+                    android:textColor="@color/den"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvGiatien"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvMonanchiet"
+                    android:layout_marginLeft="@dimen/padding_10"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="@dimen/padding_10"
+                    android:text="Máy lạnh"
+                    android:textColor="@color/den"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvbantrong"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvGiatien"
+                    android:layout_marginLeft="@dimen/padding_10"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="@dimen/padding_10"
+                    android:text="Còn trống"
+                    android:textColor="@color/den"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvGioithieu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvbantrong"
+                    android:layout_marginLeft="@dimen/padding_10"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="@dimen/padding_10"
+                    android:text="Mô tả"
+                    android:textStyle="bold"
+                    android:textColor="@color/den"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/btnDatBan"
+            android:layout_width="242dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:background="@drawable/btn_login"
+            android:text="Gọi đồ"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+</LinearLayout>
