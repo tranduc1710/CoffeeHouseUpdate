@@ -362,7 +362,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         facebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://www.facebook.com/nghiamvit"));
+                Intent intent = new Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://www.facebook.com/MACCafeKet/"));
                 startActivity(intent);
             }
         });
@@ -377,7 +377,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         website.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent2 = new Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://www.facebook.com/nghiamvit"));
+                Intent intent2 = new Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://www.abbreviations.com/CAFEE"));
                 startActivity(intent2);
             }
         });
