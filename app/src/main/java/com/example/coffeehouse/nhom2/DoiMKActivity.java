@@ -67,14 +67,14 @@ public class DoiMKActivity extends AppCompatActivity {
                 }else if (MKL1.equals("")){
                     edtMKL1.setError("Yêu cầu nhập dữ liệu");
                 }else if (MKL1.equals(MKL2)){
-                    menu_progressbarDMK.setVisibility(View.VISIBLE);
+
                     RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
                     StringRequest stringRequest = new StringRequest(Request.Method.POST, Server.duongdandoimatkhau, new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
                             Intent intent = new Intent(DoiMKActivity.this,LoginActivity.class);
                             startActivity(intent);
-                            menu_progressbarDMK.setVisibility(View.GONE);
+
                         }
                     }, new Response.ErrorListener() {
                         @Override

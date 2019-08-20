@@ -52,10 +52,10 @@ public class QuanLyNHActivity extends AppCompatActivity {
             public void onClick(NhaHang nhaHang) {
                 Intent intent = new Intent(QuanLyNHActivity.this,ChitietQLNHActivity.class);
                 intent.putExtra("ID",""+nhaHang.getId());
-                intent.putExtra("TENNH",nhaHang.getTennhahang());
-                intent.putExtra("DIACHINH",nhaHang.getDiachi());
-                intent.putExtra("MONANNH",nhaHang.getMonan());
-                intent.putExtra("GIANH",""+nhaHang.getGiatien());
+                intent.putExtra("TENNH",""+nhaHang.getTennhahang());
+                intent.putExtra("DIACHINH",""+nhaHang.getDiachi());
+                intent.putExtra("MONANNH",""+nhaHang.getMonan());
+                intent.putExtra("GIANH",nhaHang.getGiatien());
                 intent.putExtra("DANHGIANH",""+nhaHang.getDanhgia());
                 intent.putExtra("IMGNH",nhaHang.getImgnhahang());
                 intent.putExtra("MOTANH",nhaHang.getMota());
