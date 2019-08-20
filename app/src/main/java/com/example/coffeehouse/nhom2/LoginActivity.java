@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -74,6 +75,7 @@ public class LoginActivity extends AppCompatActivity {
                                     email = jsonObject.getString("email");
                                     hoten = jsonObject.getString("hoten");
                                     image = jsonObject.getString("imageok");
+                                    Log.d("TAG",username);
                                     if (taikhoan.equals(username) && matkhau.equals(password)) {
                                         if (taikhoan.equals("admin") && matkhau.equals("admin")) {
                                             Intent intent = new Intent(LoginActivity.this, QuanLyNHActivity.class);

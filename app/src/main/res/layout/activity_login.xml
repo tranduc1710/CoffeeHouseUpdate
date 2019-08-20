@@ -220,7 +220,7 @@
         android:alpha="0.23"
         android:background="@drawable/textviewshape"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:textColor="@color/den"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

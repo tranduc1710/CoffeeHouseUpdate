@@ -55,7 +55,7 @@ public class QLBuaAnAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         Picasso.get().load(Server.duongdananh + banAn.getImgBuaAn()).placeholder(R.drawable.ic_avatar)
                 .error(R.drawable.ic_avatar).into(itemHodel.imgQLBanan);
         itemHodel.tvQLNhaHangBa.setText(banAn.getNameNH());
-        itemHodel.tvQLNameBan.setText("Loại : "+banAn.getSoBan());
+//        itemHodel.tvQLNameBan.setText("Loại : "+banAn.getSoBan());
         itemHodel.tvQLSoNguoi.setText(banAn.getSoNguoi()+" người");
 
             itemHodel.btnSuaBan.setOnClickListener(new View.OnClickListener() {
@@ -101,7 +101,7 @@ public class QLBuaAnAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             super(itemView);
             imgQLBanan = itemView.findViewById(R.id.imgQLBanan);
             tvQLNhaHangBa = itemView.findViewById(R.id.tvQLNhaHangBa);
-            tvQLNameBan = itemView.findViewById(R.id.tvQLNameBan);
+//            tvQLNameBan = itemView.findViewById(R.id.tvQLNameBan);
             tvQLSoNguoi = itemView.findViewById(R.id.tvQLSoNguoi);
             btnSuaBan = itemView.findViewById(R.id.btnSuaBan);
             btnXoaBan = itemView.findViewById(R.id.btnXoaBan);

@@ -489,9 +489,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(intent);
                 break;
             case R.id.datban:
-                Intent intent5 = new Intent(MainActivity.this, DatBanActivity.class);
-                startActivity(intent5);
-                break;
+//                Intent intent5 = new Intent(MainActivity.this, DatBanActivity.class);
+//                startActivity(intent5);
+//                break;
+                Toast.makeText(this, "Lich su", Toast.LENGTH_SHORT).show();
             case R.id.lichsu:
                 Intent intent1 = new Intent(MainActivity.this, LichSuActivity.class);
                 startActivity(intent1);

@@ -219,7 +219,7 @@
             android:layout_gravity="center"
             android:layout_margin="5dp"
             android:background="@drawable/btn_login"
-            android:text="Gọi đồ"
+            android:text="Đặt bàn"
             android:textAllCaps="false"
             android:textColor="@android:color/white"
             android:textSize="18sp"
