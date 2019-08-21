@@ -181,7 +181,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onResponse(String response) {
                 int iD;
-                int tien;
+                String tien;
                 int danhGia;
                 String tennhahang;
                 String imgnhahang;
@@ -197,7 +197,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                             tennhahang = jsonObject.getString("tennhahang");
                             diachi = jsonObject.getString("diachi");
                             monan = jsonObject.getString("monan");
-                            tien = jsonObject.getInt("giatien");
+                            tien = jsonObject.getString("giatien");
                             danhGia = jsonObject.getInt("danhgia");
                             imgnhahang = jsonObject.getString("imgnhahang");
                             mota = jsonObject.getString("mota");
@@ -224,7 +224,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onResponse(String response) {
                 int iD;
-                int tien;
+                String tien;
                 int danhGia;
                 String tennhahang;
                 String imgnhahang;
@@ -240,7 +240,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                             tennhahang = jsonObject.getString("tennhahang");
                             diachi = jsonObject.getString("diachi");
                             monan = jsonObject.getString("monan");
-                            tien = jsonObject.getInt("giatien");
+                            tien = jsonObject.getString("giatien");
                             danhGia = jsonObject.getInt("danhgia");
                             imgnhahang = jsonObject.getString("imgnhahang");
                             mota = jsonObject.getString("mota");
@@ -268,7 +268,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onResponse(String response) {
                 int iD;
-                int tien;
+                String tien;
                 int danhGia;
                 String tennhahang;
                 String imgnhahang;
@@ -284,7 +284,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                             tennhahang = jsonObject.getString("tennhahang");
                             diachi = jsonObject.getString("diachi");
                             monan = jsonObject.getString("monan");
-                            tien = jsonObject.getInt("giatien");
+                            tien = jsonObject.getString("giatien");
                             danhGia = jsonObject.getInt("danhgia");
                             imgnhahang = jsonObject.getString("imgnhahang");
                             mota = jsonObject.getString("mota");
@@ -311,7 +311,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onResponse(String response) {
                 int iD;
-                int tien;
+                String tien;
                 int danhGia;
                 String tennhahang;
                 String imgnhahang;
@@ -327,7 +327,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                             tennhahang = jsonObject.getString("tennhahang");
                             diachi = jsonObject.getString("diachi");
                             monan = jsonObject.getString("monan");
-                            tien = jsonObject.getInt("giatien");
+                            tien = jsonObject.getString("giatien");
                             danhGia = jsonObject.getInt("danhgia");
                             imgnhahang = jsonObject.getString("imgnhahang");
                             mota = jsonObject.getString("mota");

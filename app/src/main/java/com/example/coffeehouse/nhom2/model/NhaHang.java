@@ -5,12 +5,12 @@ public class NhaHang {
     String tennhahang;
     String diachi;
     String monan;
-    int giatien;
+    String giatien;
     int danhgia;
     String imgnhahang;
     String mota;
 
-    public NhaHang(int id, String tennhahang, String diachi, String monan, int giatien, int danhgia, String imgnhahang, String mota) {
+    public NhaHang(int id, String tennhahang, String diachi, String monan, String giatien, int danhgia, String imgnhahang, String mota) {
         this.id = id;
         this.tennhahang = tennhahang;
         this.diachi = diachi;
@@ -53,11 +53,11 @@ public class NhaHang {
         this.monan = monan;
     }
 
-    public int getGiatien() {
+    public String getGiatien() {
         return giatien;
     }
 
-    public void setGiatien(int giatien) {
+    public void setGiatien(String giatien) {
         this.giatien = giatien;
     }
 
