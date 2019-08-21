@@ -124,6 +124,10 @@ public class QuanLyNHActivity extends AppCompatActivity {
                 Intent intent = new Intent(QuanLyNHActivity.this,ThemNHActivity.class);
                 startActivity(intent);
                 break;
+                case R.id.logout:
+                Intent intent1 = new Intent(QuanLyNHActivity.this,LoginActivity.class);
+                startActivity(intent1);
+                break;
         }
         //noinspection SimplifiableIfStatement
         return super.onOptionsItemSelected(item);

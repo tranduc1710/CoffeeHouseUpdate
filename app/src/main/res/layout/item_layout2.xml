@@ -4,148 +4,165 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/imgItem2"
-        android:layout_width="120dp"
-        android:layout_height="100dp"
-        android:layout_marginLeft="5dp"
+
+    <RelativeLayout
         android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/ban" />
-
-    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_toRightOf="@+id/imgItem2"
-        android:text="Bàn số:"
-        android:textColor="@android:color/black"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:background="@drawable/item_card">
 
-    <TextView
-        android:id="@+id/tvItem2"
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgItem2"
+            android:layout_width="120dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ban" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_toRightOf="@+id/imgItem2"
+            android:text="Bàn số:"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvItem2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_toRightOf="@+id/imgItem2"
+            android:paddingLeft="64dp"
+            android:text="201"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imgsaoden1a"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_below="@+id/tvItem2"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@id/imgItem2"
+            app:srcCompat="@drawable/ic_sao_den" />
+
+        <ImageView
+            android:id="@+id/imgsaoden2a"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_below="@+id/tvItem2"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@id/imgsaoden1a"
+            app:srcCompat="@drawable/ic_sao_den" />
+
+        <ImageView
+            android:id="@+id/imgsaoden3a"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_below="@+id/tvItem2"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@id/imgsaoden2a"
+            app:srcCompat="@drawable/ic_sao_den" />
+
+        <ImageView
+            android:id="@+id/imgsaoden4a"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_below="@+id/tvItem2"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@id/imgsaoden3a"
+            app:srcCompat="@drawable/ic_sao_den" />
+
+        <ImageView
+            android:id="@+id/imgsaoden5a"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_below="@+id/tvItem2"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@id/imgsaoden4a"
+            app:srcCompat="@drawable/ic_sao_den" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imgsaoden1a"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_toRightOf="@id/imgItem2"
+            android:text="Tầng:"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvItemDiaChi2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imgsaoden1a"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_toRightOf="@id/imgItem2"
+            android:paddingLeft="40dp"
+            android:text="2"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvItemDiaChi2"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="15dp"
+            android:layout_toRightOf="@id/imgItem2"
+            android:text="Loại bàn:"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvMonan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvItemDiaChi2"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginBottom="15dp"
+            android:layout_toRightOf="@id/imgItem2"
+            android:paddingLeft="60dp"
+            android:text="6"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvItemDiaChi2"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="15dp"
+            android:layout_toRightOf="@id/tvMonan"
+            android:text="người"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+
+    <View
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_toRightOf="@+id/imgItem2"
-        android:paddingLeft="64dp"
-        android:text="201"
-        android:textColor="@android:color/black"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
-    <ImageView
-        android:id="@+id/imgsaoden1a"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_below="@+id/tvItem2"
-        android:layout_marginTop="5dp"
-        android:layout_toRightOf="@id/imgItem2"
-        app:srcCompat="@drawable/ic_sao_den" />
-
-    <ImageView
-        android:id="@+id/imgsaoden2a"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_below="@+id/tvItem2"
-        android:layout_marginTop="5dp"
-        android:layout_toRightOf="@id/imgsaoden1a"
-        app:srcCompat="@drawable/ic_sao_den" />
-
-    <ImageView
-        android:id="@+id/imgsaoden3a"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_below="@+id/tvItem2"
-        android:layout_marginTop="5dp"
-        android:layout_toRightOf="@id/imgsaoden2a"
-        app:srcCompat="@drawable/ic_sao_den" />
-
-    <ImageView
-        android:id="@+id/imgsaoden4a"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_below="@+id/tvItem2"
-        android:layout_marginTop="5dp"
-        android:layout_toRightOf="@id/imgsaoden3a"
-        app:srcCompat="@drawable/ic_sao_den" />
-
-    <ImageView
-        android:id="@+id/imgsaoden5a"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_below="@+id/tvItem2"
-        android:layout_marginTop="5dp"
-        android:layout_toRightOf="@id/imgsaoden4a"
-        app:srcCompat="@drawable/ic_sao_den" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imgsaoden1a"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="10dp"
-        android:layout_toRightOf="@id/imgItem2"
-        android:text="Tầng:"
-        android:textColor="#000000"
-        android:textSize="14sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/tvItemDiaChi2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imgsaoden1a"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="10dp"
-        android:layout_toRightOf="@id/imgItem2"
-        android:paddingLeft="40dp"
-        android:text="2"
-        android:textColor="#000000"
-        android:textSize="14sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvItemDiaChi2"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="15dp"
-        android:layout_toRightOf="@id/imgItem2"
-        android:text="Loại bàn:"
-        android:textColor="#000000"
-        android:textSize="14sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/tvMonan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvItemDiaChi2"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="3dp"
-        android:layout_marginBottom="15dp"
-        android:layout_toRightOf="@id/imgItem2"
-        android:paddingLeft="60dp"
-        android:text="6"
-        android:textColor="#000000"
-        android:textSize="14sp"
-        android:textStyle="bold" />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvItemDiaChi2"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="15dp"
-        android:layout_toRightOf="@id/tvMonan"
-        android:text="người"
-        android:textColor="#000000"
-        android:textSize="14sp"
-        android:textStyle="bold" />
+        android:layout_height="1dp"
+        android:layout_marginTop="150dp"
+        android:background="#E4DEDE" />
 </RelativeLayout>

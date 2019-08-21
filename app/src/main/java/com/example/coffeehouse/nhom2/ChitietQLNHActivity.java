@@ -86,7 +86,7 @@ public class ChitietQLNHActivity extends AppCompatActivity {
         tennhahang = intent.getStringExtra("TENNH");
         diachi = intent.getStringExtra("DIACHINH");
         monan = intent.getStringExtra("MONANNH");
-        tien = Integer.valueOf(intent.getStringExtra("GIANH"));
+//        tien = Integer.valueOf(intent.getStringExtra("GIANH"));
         danhGia = Integer.valueOf(intent.getStringExtra("DANHGIANH"));
         imgnhahang = intent.getStringExtra("IMGNH");
         mota = intent.getStringExtra("MOTANH");

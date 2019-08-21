@@ -28,13 +28,13 @@ public class ViewPage extends FragmentPagerAdapter {
                 BuatruaFragment buatruaFragment = new BuatruaFragment();
                 bundle = new Bundle();
                 bundle.putString("IDNH",IDNH);
-                bundle.putString("IMGNH",IMGNH);
+//                bundle.putString("IMGNH",IMGNH);
                 buatruaFragment.setArguments(bundle);
                 return buatruaFragment;
             case 1:
                 BuaToiFragemnt buaToiFragemnt = new BuaToiFragemnt();
                 bundle = new Bundle();
-                bundle.putString("IDNH",IDNH);
+//                bundle.putString("IDNH",IDNH);
                 bundle.putString("IMGNH",IMGNH);
                 buaToiFragemnt.setArguments(bundle);
                 return buaToiFragemnt;

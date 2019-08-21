@@ -78,11 +78,13 @@ public class LoginActivity extends AppCompatActivity {
                                     Log.d("TAG",username);
                                     if (taikhoan.equals(username) && matkhau.equals(password)) {
                                         if (taikhoan.equals("admin") && matkhau.equals("admin")) {
+                                            finish();
                                             Intent intent = new Intent(LoginActivity.this, QuanLyNHActivity.class);
                                             startActivity(intent);
                                             menu_progressbar.setVisibility(View.GONE);
                                             return;
                                         } else {
+                                            finish();
                                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                             intent.putExtra("ID", "" + id);
                                             intent.putExtra("HOTEN", hoten);
@@ -116,6 +118,7 @@ public class LoginActivity extends AppCompatActivity {
         btnDangKy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                finish();
                 Intent intent = new Intent(LoginActivity.this, DangKyActivity.class);
                 startActivity(intent);
             }
@@ -148,7 +151,7 @@ public class LoginActivity extends AppCompatActivity {
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://www.facebook.com/nghiamvit"));
+                Intent intent = new Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://www.facebook.com"));
                 startActivity(intent);
             }
         });

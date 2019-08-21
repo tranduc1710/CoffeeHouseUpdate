@@ -198,6 +198,7 @@ public class DangKyActivity extends AppCompatActivity {
     }
 
     public void btnLogin(View view) {
+        finish();
         Intent intent5 = new Intent(DangKyActivity.this, LoginActivity.class);
         startActivity(intent5);
     }

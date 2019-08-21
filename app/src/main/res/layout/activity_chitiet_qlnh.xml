@@ -74,12 +74,12 @@
 
                     <ImageView
                         android:id="@+id/imgsaochi1QL"
-                        android:layout_width="wrap_content"
+                        android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:layout_below="@+id/imgChitietQL"
                         android:layout_alignParentRight="true"
                         android:layout_marginTop="12dp"
-                        android:paddingLeft="207dp"
+                        android:layout_marginRight="90dp"
                         app:srcCompat="@drawable/ic_sao_den" />
 
                     <ImageView

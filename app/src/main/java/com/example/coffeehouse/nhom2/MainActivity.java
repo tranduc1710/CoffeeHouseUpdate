@@ -220,7 +220,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void GetData2() {
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, Server.duongdanbinhdan, new Response.Listener<String>() {
+//        StringRequest stringRequest = new StringRequest(Request.Method.POST, Server.duongdanbinhdan, new Response.Listener<String>() {
+//            @Override
+//            public void onResponse(String response) {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, Server.duongdanlayout1, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 int iD;
@@ -244,7 +247,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                             danhGia = jsonObject.getInt("danhgia");
                             imgnhahang = jsonObject.getString("imgnhahang");
                             mota = jsonObject.getString("mota");
-                            mangstatus3.add(new NhaHang(iD, tennhahang, diachi, monan, tien, danhGia, imgnhahang, mota));
+                            if (i%3 == 0) {
+                                mangstatus3.add(new NhaHang(iD, tennhahang, diachi, monan, tien, danhGia, imgnhahang, mota));
+                            }
                             statusAdapter3.notifyDataSetChanged();
                         }
                     } catch (JSONException e) {
@@ -264,7 +269,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void GetData1() {
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, Server.duongdansangtrong, new Response.Listener<String>() {
+//        StringRequest stringRequest = new StringRequest(Request.Method.POST, Server.duongdansangtrong, new Response.Listener<String>() {
+//            @Override
+//            public void onResponse(String response) {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, Server.duongdanlayout1, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 int iD;
@@ -288,7 +296,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                             danhGia = jsonObject.getInt("danhgia");
                             imgnhahang = jsonObject.getString("imgnhahang");
                             mota = jsonObject.getString("mota");
-                            mangstatus2.add(new NhaHang(iD, tennhahang, diachi, monan, tien, danhGia, imgnhahang, mota));
+                            if (i%2 == 0) {
+                                mangstatus2.add(new NhaHang(iD, tennhahang, diachi, monan, tien, danhGia, imgnhahang, mota));
+                            }
                             statusAdapter2.notifyDataSetChanged();
                         }
                     } catch (JSONException e) {

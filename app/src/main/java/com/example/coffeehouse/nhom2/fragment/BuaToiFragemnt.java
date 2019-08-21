@@ -175,7 +175,9 @@ public class BuaToiFragemnt extends Fragment {
                             soBan = jsonObject.getInt("soban");
                             nameNH = jsonObject.getString("namenh");
                             imgBuaAn = jsonObject.getString("imgbanan");
-                            arrayList.add(new BanAn(iD,iDNhaHang,buaAn,soNguoi,trangThai,soBan,nameNH,imgBuaAn));
+                            if(buaAn == 2) {
+                                arrayList.add(new BanAn(iD, iDNhaHang, buaAn, soNguoi, trangThai, soBan, nameNH, imgBuaAn));
+                            }
                             giaReAdapter.notifyDataSetChanged();
                         }
                     } catch (JSONException e) {

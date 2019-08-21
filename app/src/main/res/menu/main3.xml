@@ -7,4 +7,10 @@
         android:icon="@drawable/ic_add_black_24dp"
         android:title=""
         app:showAsAction="always" />
+    <item
+        android:iconTint="#fff"
+        android:id="@+id/logout"
+        android:orderInCategory="100"
+        android:title="Logout"
+        app:showAsAction="always" />
 </menu>

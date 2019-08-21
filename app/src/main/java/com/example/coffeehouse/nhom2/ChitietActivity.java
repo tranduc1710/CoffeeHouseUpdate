@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -67,6 +68,7 @@ public class ChitietActivity extends AppCompatActivity {
         btnDatBan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                finish();
                 Intent intent = new Intent(ChitietActivity.this,DatBanActivity.class);
                 intent.putExtra("IDNH",""+iD);
                 intent.putExtra("IMGNH",imgnhahang);
@@ -300,11 +302,12 @@ public class ChitietActivity extends AppCompatActivity {
         tennhahang = intent.getStringExtra("TENNH");
         diachi = intent.getStringExtra("DIACHINH");
         monan = intent.getStringExtra("MONANNH");
-        tien = Integer.valueOf(intent.getStringExtra("GIANH"));
+//        tien = Integer.valueOf(intent.getStringExtra("GIANH"));
         danhGia = Integer.valueOf(intent.getStringExtra("DANHGIANH"));
         imgnhahang = intent.getStringExtra("IMGNH");
         mota = intent.getStringExtra("MOTANH");
         tvTT.setText(tennhahang);
+//        Log.e("data", iD + " |ten " + tennhahang + " |dia chi " + diachi + " |mon an " + monan + " |danh gia " + danhGia + " |mo ta " + mota);
     }
 
     private void AnhXa() {
