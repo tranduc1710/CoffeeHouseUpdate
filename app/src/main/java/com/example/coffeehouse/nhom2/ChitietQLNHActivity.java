@@ -174,7 +174,7 @@ public class ChitietQLNHActivity extends AppCompatActivity {
                 startActivity(intent1);
                 break;
             case R.id.itemSuaNH:
-                Intent intent = new Intent(ChitietQLNHActivity.this,SuaNHActivity.class);
+                Intent intent = new Intent(ChitietQLNHActivity.this, SuaTangActivity.class);
                 intent.putExtra("ID",""+iD);
                 intent.putExtra("TENNH",tennhahang);
                 intent.putExtra("DIACHINH",diachi);
@@ -215,7 +215,7 @@ public class ChitietQLNHActivity extends AppCompatActivity {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, Server.duongdanxoaNH, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Intent intent = new Intent(ChitietQLNHActivity.this,QuanLyNHActivity.class);
+                Intent intent = new Intent(ChitietQLNHActivity.this, QuanLyCoffeeActivity.class);
                 startActivity(intent);
                 relativeLayout.setVisibility(View.GONE);
             }

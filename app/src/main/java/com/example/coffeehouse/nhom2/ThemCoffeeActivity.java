@@ -36,7 +36,7 @@ import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ThemNHActivity extends AppCompatActivity {
+public class ThemCoffeeActivity extends AppCompatActivity {
     private Toolbar toolbarThemNH;
     private ImageView imgAnhNH;
     private ImageView imgThemAnhNH;
@@ -82,7 +82,7 @@ public class ThemNHActivity extends AppCompatActivity {
         imgThemAnhNH.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ActivityCompat.requestPermissions(ThemNHActivity.this,
+                ActivityCompat.requestPermissions(ThemCoffeeActivity.this,
                         new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},REQUET_FODER);
             }
         });
@@ -97,7 +97,7 @@ public class ThemNHActivity extends AppCompatActivity {
                 int danhgia1 = Integer.valueOf(danhgia);
                 final String mota = edMota.getText().toString().trim();
                 if (bitmap == null){
-                    Toast.makeText(ThemNHActivity.this, "Yêu cầu chọn ảnh", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ThemCoffeeActivity.this, "Yêu cầu chọn ảnh", Toast.LENGTH_SHORT).show();
                 } else if (nameNH.equals("")){
                     edTennhahang.setError("Yêu cầu nhập dữ liệu");
                 }else if (diachi.equals("")){
@@ -118,7 +118,7 @@ public class ThemNHActivity extends AppCompatActivity {
                     StringRequest stringRequest = new StringRequest(Request.Method.POST, Server.duongdanthemNH, new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
-                            Intent intent = new Intent(ThemNHActivity.this,QuanLyNHActivity.class);
+                            Intent intent = new Intent(ThemCoffeeActivity.this, QuanLyCoffeeActivity.class);
                             startActivity(intent);
                             relativeLayout.setVisibility(View.GONE);
                         }

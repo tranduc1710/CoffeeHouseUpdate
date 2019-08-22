@@ -20,11 +20,12 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.coffeehouse.nhom2.Main2Activity;
 import com.example.coffeehouse.nhom2.MainActivity;
 import com.example.coffeehouse.nhom2.R;
-import com.example.coffeehouse.nhom2.SuaBanAnActivity;
-import com.example.coffeehouse.nhom2.adapter.QLBuaAnAdapter;
-import com.example.coffeehouse.nhom2.model.BanAn;
+import com.example.coffeehouse.nhom2.SuaBanActivity;
+import com.example.coffeehouse.nhom2.adapter.QLCoffeeAdapter;
+import com.example.coffeehouse.nhom2.model.TangModel;
 import com.example.coffeehouse.nhom2.model.MySuaBan;
 import com.example.coffeehouse.nhom2.model.MyXoaBA;
 import com.example.coffeehouse.nhom2.unti.Server;
@@ -37,25 +38,25 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class QLBuaToiFragemnt extends Fragment {
-    private int idBuaAn = 2;
+public class QLTang1Fragment extends Fragment {
+    private int idBuaAn = 1;
     private  String IDTK;
     private   String IDNH,IMGNH;
     private  RecyclerView recyBuaTrua;
-    private  ArrayList<BanAn> arrayList;
+    private  ArrayList<TangModel> arrayList;
     private  LinearLayoutManager manager;
-    private QLBuaAnAdapter giaReAdapter;
+    private QLCoffeeAdapter giaReAdapter;
     private  RelativeLayout menu_progressbarBtrua;
     private View view;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.ql_bua_toi,container,false);
-        menu_progressbarBtrua = view.findViewById(R.id.menu_progressbarQLBtoi);
-        recyBuaTrua = view.findViewById(R.id.recyQLBuaToi);
+        view = inflater.inflate(R.layout.ql_bua_trua,container,false);
+        menu_progressbarBtrua = view.findViewById(R.id.menu_progressbarQLBtrua);
+        recyBuaTrua = view.findViewById(R.id.recyQLBuaTrua);
         arrayList = new ArrayList<>();
         manager = new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false);
-        giaReAdapter = new QLBuaAnAdapter(getActivity(),arrayList);
+        giaReAdapter = new QLCoffeeAdapter(getActivity(),arrayList);
         recyBuaTrua.setHasFixedSize(true);
 //        recyBuaTrua.setLayoutManager(manager);
         recyBuaTrua.setLayoutManager(new GridLayoutManager(getActivity(),2));
@@ -63,17 +64,18 @@ public class QLBuaToiFragemnt extends Fragment {
         IDTK = MainActivity.ID;
         Bundle bundle = getArguments();
         if (bundle != null) {
-            IDNH = bundle.getString("IDNH");
-            IMGNH = bundle.getString("IMGNH");
+            IDNH = Main2Activity.IDNH;
+            IMGNH = Main2Activity.IMGNH;
         }
         giaReAdapter.setMyXoaBA(new MyXoaBA() {
             @Override
-            public void OnClick(final BanAn banAn) {
+            public void OnClick(final TangModel tangModel) {
                 RequestQueue requestQueue = Volley.newRequestQueue(getContext());
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, Server.duongdanxoaban, new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        XoaLSTheoIDNH(banAn.getiD());
+                        XoaLSTheoIDNH(tangModel.getiD());
+
                     }
                 }, new Response.ErrorListener() {
                     @Override
@@ -84,7 +86,7 @@ public class QLBuaToiFragemnt extends Fragment {
                     @Override
                     protected Map<String, String> getParams() throws AuthFailureError {
                         HashMap<String,String> hashMap = new HashMap<>();
-                        hashMap.put("idbanan",""+banAn.getiD());
+                        hashMap.put("idbanan",""+ tangModel.getiD());
                         return hashMap;
                     }
                 };
@@ -94,15 +96,15 @@ public class QLBuaToiFragemnt extends Fragment {
         GetData();
         giaReAdapter.setMySuaBan(new MySuaBan() {
             @Override
-            public void Onclick(BanAn banAn) {
-                Intent intent = new Intent(getActivity(), SuaBanAnActivity.class);
-                intent.putExtra("IDBA",""+banAn.getiD());
-                intent.putExtra("IMGBA",banAn.getImgBuaAn());
-                intent.putExtra("NAMENH",banAn.getNameNH());
-                intent.putExtra("SONGUOI",""+banAn.getSoNguoi());
-                intent.putExtra("SOBAN",""+banAn.getSoBan());
-                intent.putExtra("BUAAN",""+banAn.getBuaAn());
-                intent.putExtra("IDNH",""+banAn.getiDNhaHang());
+            public void Onclick(TangModel tangModel) {
+                Intent intent = new Intent(getActivity(), SuaBanActivity.class);
+                intent.putExtra("IDBA",""+ tangModel.getiD());
+                intent.putExtra("IMGBA", tangModel.getImgBuaAn());
+                intent.putExtra("NAMENH", tangModel.getNameNH());
+                intent.putExtra("SONGUOI",""+ tangModel.getSoNguoi());
+                intent.putExtra("SOBAN",""+ tangModel.getSoBan());
+                intent.putExtra("BUAAN",""+ tangModel.getBuaAn());
+                intent.putExtra("IDNH",""+ tangModel.getiDNhaHang());
                 startActivity(intent);
             }
         });
@@ -135,7 +137,7 @@ public class QLBuaToiFragemnt extends Fragment {
                             soBan = jsonObject.getInt("soban");
                             nameNH = jsonObject.getString("namenh");
                             imgBuaAn = jsonObject.getString("imgbanan");
-                            arrayList.add(new BanAn(iD,iDNhaHang,buaAn,soNguoi,trangThai,soBan,nameNH,imgBuaAn));
+                            arrayList.add(new TangModel(iD,iDNhaHang,buaAn,soNguoi,trangThai,soBan,nameNH,imgBuaAn));
                             giaReAdapter.notifyDataSetChanged();
                         }
                     } catch (JSONException e) {
@@ -183,4 +185,3 @@ public class QLBuaToiFragemnt extends Fragment {
         requestQueue.add(stringRequest);
     }
 }
-

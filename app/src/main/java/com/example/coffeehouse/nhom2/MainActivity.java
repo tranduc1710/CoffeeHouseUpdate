@@ -1,12 +1,11 @@
 package com.example.coffeehouse.nhom2;
 
-import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -26,10 +25,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.coffeehouse.nhom2.adapter.GiaReAdapter;
-import com.example.coffeehouse.nhom2.adapter.NhaHangAdapter;
+import com.example.coffeehouse.nhom2.adapter.NhomAdapter;
+import com.example.coffeehouse.nhom2.adapter.CoffeeHouseAdapter;
 import com.example.coffeehouse.nhom2.model.MyItemOnClick;
-import com.example.coffeehouse.nhom2.model.NhaHang;
 import com.example.coffeehouse.nhom2.unti.Server;
 import com.facebook.shimmer.ShimmerFrameLayout;
 import com.squareup.picasso.Picasso;
@@ -50,10 +48,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private CircleImageView imgName;
     private TextView tvxemTC1, tvxemTC2, tvxemTC3, tvxemTC4;
     public static String ID, username, password, email, hoten, image;
-    ArrayList<NhaHang> mangstatus, mangstatus2, mangstatus3, mangstatus4;
+    ArrayList<com.example.coffeehouse.nhom2.model.CoffeeHouse> mangstatus, mangstatus2, mangstatus3, mangstatus4;
     LinearLayoutManager manager, manager2, manager3, manager4;
-    NhaHangAdapter statusAdapter, statusAdapter2, statusAdapter3;
-    GiaReAdapter statusAdapter4;
+    CoffeeHouseAdapter statusAdapter, statusAdapter2, statusAdapter3;
+    NhomAdapter statusAdapter4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         tvxemTC1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, NhaHang2Activity.class);
+                Intent intent = new Intent(MainActivity.this, CoffeeHouse.class);
                 intent.putExtra("ID", ID);
                 intent.putExtra("HOTEN", hoten);
                 intent.putExtra("EMAIL", email);
@@ -88,7 +86,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         tvxemTC2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, NhaHang2Activity.class);
+                Intent intent = new Intent(MainActivity.this, CoffeeHouse.class);
                 intent.putExtra("SOLON", "" + 999999999);
                 intent.putExtra("SONHO", "" + 400000);
                 startActivity(intent);
@@ -97,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         tvxemTC3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, NhaHang2Activity.class);
+                Intent intent = new Intent(MainActivity.this, CoffeeHouse.class);
                 intent.putExtra("SOLON", "" + 399999);
                 intent.putExtra("SONHO", "" + 200000);
                 startActivity(intent);
@@ -106,7 +104,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         tvxemTC4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, NhaHang2Activity.class);
+                Intent intent = new Intent(MainActivity.this, CoffeeHouse.class);
                 intent.putExtra("SOLON", "" + 199999);
                 intent.putExtra("SONHO", "" + 0);
                 startActivity(intent);
@@ -114,61 +112,61 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
         statusAdapter.setMyItemOnClick(new MyItemOnClick() {
             @Override
-            public void onClick(NhaHang nhaHang) {
+            public void onClick(com.example.coffeehouse.nhom2.model.CoffeeHouse coffeeHouse) {
                 Intent intent = new Intent(MainActivity.this, ChitietActivity.class);
-                intent.putExtra("ID", "" + nhaHang.getId());
-                intent.putExtra("TENNH", nhaHang.getTennhahang());
-                intent.putExtra("DIACHINH", nhaHang.getDiachi());
-                intent.putExtra("MONANNH", nhaHang.getMonan());
-                intent.putExtra("GIANH", "" + nhaHang.getGiatien());
-                intent.putExtra("DANHGIANH", "" + nhaHang.getDanhgia());
-                intent.putExtra("IMGNH", nhaHang.getImgnhahang());
-                intent.putExtra("MOTANH", nhaHang.getMota());
+                intent.putExtra("ID", "" + coffeeHouse.getId());
+                intent.putExtra("TENNH", coffeeHouse.getTennhahang());
+                intent.putExtra("DIACHINH", coffeeHouse.getDiachi());
+                intent.putExtra("MONANNH", coffeeHouse.getMonan());
+                intent.putExtra("GIANH", "" + coffeeHouse.getGiatien());
+                intent.putExtra("DANHGIANH", "" + coffeeHouse.getDanhgia());
+                intent.putExtra("IMGNH", coffeeHouse.getImgnhahang());
+                intent.putExtra("MOTANH", coffeeHouse.getMota());
                 startActivity(intent);
             }
         });
         statusAdapter2.setMyItemOnClick(new MyItemOnClick() {
             @Override
-            public void onClick(NhaHang nhaHang) {
+            public void onClick(com.example.coffeehouse.nhom2.model.CoffeeHouse coffeeHouse) {
                 Intent intent = new Intent(MainActivity.this, ChitietActivity.class);
-                intent.putExtra("ID", "" + nhaHang.getId());
-                intent.putExtra("TENNH", nhaHang.getTennhahang());
-                intent.putExtra("DIACHINH", nhaHang.getDiachi());
-                intent.putExtra("MONANNH", nhaHang.getMonan());
-                intent.putExtra("GIANH", "" + nhaHang.getGiatien());
-                intent.putExtra("DANHGIANH", "" + nhaHang.getDanhgia());
-                intent.putExtra("IMGNH", nhaHang.getImgnhahang());
-                intent.putExtra("MOTANH", nhaHang.getMota());
+                intent.putExtra("ID", "" + coffeeHouse.getId());
+                intent.putExtra("TENNH", coffeeHouse.getTennhahang());
+                intent.putExtra("DIACHINH", coffeeHouse.getDiachi());
+                intent.putExtra("MONANNH", coffeeHouse.getMonan());
+                intent.putExtra("GIANH", "" + coffeeHouse.getGiatien());
+                intent.putExtra("DANHGIANH", "" + coffeeHouse.getDanhgia());
+                intent.putExtra("IMGNH", coffeeHouse.getImgnhahang());
+                intent.putExtra("MOTANH", coffeeHouse.getMota());
                 startActivity(intent);
             }
         });
         statusAdapter3.setMyItemOnClick(new MyItemOnClick() {
             @Override
-            public void onClick(NhaHang nhaHang) {
+            public void onClick(com.example.coffeehouse.nhom2.model.CoffeeHouse coffeeHouse) {
                 Intent intent = new Intent(MainActivity.this, ChitietActivity.class);
-                intent.putExtra("ID", "" + nhaHang.getId());
-                intent.putExtra("TENNH", nhaHang.getTennhahang());
-                intent.putExtra("DIACHINH", nhaHang.getDiachi());
-                intent.putExtra("MONANNH", nhaHang.getMonan());
-                intent.putExtra("GIANH", "" + nhaHang.getGiatien());
-                intent.putExtra("DANHGIANH", "" + nhaHang.getDanhgia());
-                intent.putExtra("IMGNH", nhaHang.getImgnhahang());
-                intent.putExtra("MOTANH", nhaHang.getMota());
+                intent.putExtra("ID", "" + coffeeHouse.getId());
+                intent.putExtra("TENNH", coffeeHouse.getTennhahang());
+                intent.putExtra("DIACHINH", coffeeHouse.getDiachi());
+                intent.putExtra("MONANNH", coffeeHouse.getMonan());
+                intent.putExtra("GIANH", "" + coffeeHouse.getGiatien());
+                intent.putExtra("DANHGIANH", "" + coffeeHouse.getDanhgia());
+                intent.putExtra("IMGNH", coffeeHouse.getImgnhahang());
+                intent.putExtra("MOTANH", coffeeHouse.getMota());
                 startActivity(intent);
             }
         });
         statusAdapter4.setMyItemOnClick(new MyItemOnClick() {
             @Override
-            public void onClick(NhaHang nhaHang) {
+            public void onClick(com.example.coffeehouse.nhom2.model.CoffeeHouse coffeeHouse) {
                 Intent intent = new Intent(MainActivity.this, ChitietActivity.class);
-                intent.putExtra("ID", "" + nhaHang.getId());
-                intent.putExtra("TENNH", nhaHang.getTennhahang());
-                intent.putExtra("DIACHINH", nhaHang.getDiachi());
-                intent.putExtra("MONANNH", nhaHang.getMonan());
-                intent.putExtra("GIANH", "" + nhaHang.getGiatien());
-                intent.putExtra("DANHGIANH", "" + nhaHang.getDanhgia());
-                intent.putExtra("IMGNH", nhaHang.getImgnhahang());
-                intent.putExtra("MOTANH", nhaHang.getMota());
+                intent.putExtra("ID", "" + coffeeHouse.getId());
+                intent.putExtra("TENNH", coffeeHouse.getTennhahang());
+                intent.putExtra("DIACHINH", coffeeHouse.getDiachi());
+                intent.putExtra("MONANNH", coffeeHouse.getMonan());
+                intent.putExtra("GIANH", "" + coffeeHouse.getGiatien());
+                intent.putExtra("DANHGIANH", "" + coffeeHouse.getDanhgia());
+                intent.putExtra("IMGNH", coffeeHouse.getImgnhahang());
+                intent.putExtra("MOTANH", coffeeHouse.getMota());
                 startActivity(intent);
             }
         });
@@ -201,7 +199,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                             danhGia = jsonObject.getInt("danhgia");
                             imgnhahang = jsonObject.getString("imgnhahang");
                             mota = jsonObject.getString("mota");
-                            mangstatus4.add(new NhaHang(iD, tennhahang, diachi, monan, tien, danhGia, imgnhahang, mota));
+                            mangstatus4.add(new com.example.coffeehouse.nhom2.model.CoffeeHouse(iD, tennhahang, diachi, monan, tien, danhGia, imgnhahang, mota));
                             statusAdapter4.notifyDataSetChanged();
                         }
                     } catch (JSONException e) {
@@ -248,7 +246,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                             imgnhahang = jsonObject.getString("imgnhahang");
                             mota = jsonObject.getString("mota");
                             if (i%3 == 0) {
-                                mangstatus3.add(new NhaHang(iD, tennhahang, diachi, monan, tien, danhGia, imgnhahang, mota));
+                                mangstatus3.add(new com.example.coffeehouse.nhom2.model.CoffeeHouse(iD, tennhahang, diachi, monan, tien, danhGia, imgnhahang, mota));
                             }
                             statusAdapter3.notifyDataSetChanged();
                         }
@@ -297,7 +295,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                             imgnhahang = jsonObject.getString("imgnhahang");
                             mota = jsonObject.getString("mota");
                             if (i%2 == 0) {
-                                mangstatus2.add(new NhaHang(iD, tennhahang, diachi, monan, tien, danhGia, imgnhahang, mota));
+                                mangstatus2.add(new com.example.coffeehouse.nhom2.model.CoffeeHouse(iD, tennhahang, diachi, monan, tien, danhGia, imgnhahang, mota));
                             }
                             statusAdapter2.notifyDataSetChanged();
                         }
@@ -341,7 +339,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                             danhGia = jsonObject.getInt("danhgia");
                             imgnhahang = jsonObject.getString("imgnhahang");
                             mota = jsonObject.getString("mota");
-                            mangstatus.add(new NhaHang(iD, tennhahang, diachi, monan, tien, danhGia, imgnhahang, mota));
+                            mangstatus.add(new com.example.coffeehouse.nhom2.model.CoffeeHouse(iD, tennhahang, diachi, monan, tien, danhGia, imgnhahang, mota));
                             statusAdapter.notifyDataSetChanged();
                         }
                     } catch (JSONException e) {
@@ -426,24 +424,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         recyclerView = findViewById(R.id.recyclerView1);
         mangstatus = new ArrayList<>();
-        manager = new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false);
-        statusAdapter = new NhaHangAdapter(mangstatus, MainActivity.this);
+        manager = new GridLayoutManager(MainActivity.this, 2, LinearLayoutManager.HORIZONTAL, false);
+        statusAdapter = new CoffeeHouseAdapter(mangstatus, MainActivity.this);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(manager);
         recyclerView.setAdapter(statusAdapter);
 
         recyclerView2 = findViewById(R.id.recyclerView2);
         mangstatus2 = new ArrayList<>();
-        manager2 = new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false);
-        statusAdapter2 = new NhaHangAdapter(mangstatus2, MainActivity.this);
+        manager2 = new GridLayoutManager(MainActivity.this, 2, LinearLayoutManager.HORIZONTAL, false);
+        statusAdapter2 = new CoffeeHouseAdapter(mangstatus2, MainActivity.this);
         recyclerView2.setHasFixedSize(true);
         recyclerView2.setLayoutManager(manager2);
         recyclerView2.setAdapter(statusAdapter2);
 
         recyclerView3 = findViewById(R.id.recyclerView3);
         mangstatus3 = new ArrayList<>();
-        manager3 = new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false);
-        statusAdapter3 = new NhaHangAdapter(mangstatus3, MainActivity.this);
+        manager3 = new GridLayoutManager(MainActivity.this, 2, LinearLayoutManager.HORIZONTAL, false);
+        statusAdapter3 = new CoffeeHouseAdapter(mangstatus3, MainActivity.this);
         recyclerView3.setHasFixedSize(true);
         recyclerView3.setLayoutManager(manager3);
         recyclerView3.setAdapter(statusAdapter3);
@@ -451,7 +449,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         recyclerView4 = findViewById(R.id.recyclerView4);
         mangstatus4 = new ArrayList<>();
         manager4 = new LinearLayoutManager(MainActivity.this, LinearLayoutManager.VERTICAL, false);
-        statusAdapter4 = new GiaReAdapter(mangstatus4, MainActivity.this);
+        statusAdapter4 = new NhomAdapter(mangstatus4, MainActivity.this);
         recyclerView4.setHasFixedSize(true);
         recyclerView4.setLayoutManager(manager4);
         recyclerView4.setAdapter(statusAdapter4);
@@ -487,7 +485,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
         switch (id) {
             case R.id.nhahang:
-                Intent intent = new Intent(MainActivity.this, NhaHang2Activity.class);
+                Intent intent = new Intent(MainActivity.this, CoffeeHouse.class);
                 intent.putExtra("ID", ID);
                 intent.putExtra("HOTEN", hoten);
                 intent.putExtra("EMAIL", email);

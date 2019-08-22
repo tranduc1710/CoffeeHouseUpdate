@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:background="@drawable/bg"
     android:layout_height="match_parent"
-    tools:context=".NhaHang2Activity">
+    tools:context=".CoffeeHouse">
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:theme="@style/AppTheme.AppBarOverlay"

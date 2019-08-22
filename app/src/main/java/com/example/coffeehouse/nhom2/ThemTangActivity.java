@@ -32,7 +32,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ThemBanActivity extends AppCompatActivity {
+public class ThemTangActivity extends AppCompatActivity {
     private ImageView imgAnhNHTBA;
     private TextView tvNameNHTBA;
     private TextInputLayout tiSoban;
@@ -88,7 +88,7 @@ public class ThemBanActivity extends AppCompatActivity {
                                         JSONObject jsonObject = jsonArray.getJSONObject(i);
                                         sobanan = jsonObject.getString("soban");
                                         if (soban.equals(sobanan)){
-                                            final AlertDialog.Builder builder = new AlertDialog.Builder(ThemBanActivity.this);
+                                            final AlertDialog.Builder builder = new AlertDialog.Builder(ThemTangActivity.this);
                                             builder.setTitle("Bàn ăn không được trùng nhau");
                                             builder.setNegativeButton("OK", new DialogInterface.OnClickListener() {
                                                 @Override
@@ -167,7 +167,7 @@ public class ThemBanActivity extends AppCompatActivity {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, Server.duongdanthemban, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Intent intent = new Intent(ThemBanActivity.this,Main2Activity.class);
+                Intent intent = new Intent(ThemTangActivity.this,Main2Activity.class);
                 intent.putExtra("IDNH",""+IDNH);
                 intent.putExtra("NAMENH",""+NAMENH);
                 intent.putExtra("IMGNH",IMGNH);

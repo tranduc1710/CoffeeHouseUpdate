@@ -25,8 +25,8 @@ import com.android.volley.toolbox.Volley;
 import com.example.coffeehouse.nhom2.LichSuActivity;
 import com.example.coffeehouse.nhom2.MainActivity;
 import com.example.coffeehouse.nhom2.R;
-import com.example.coffeehouse.nhom2.adapter.BuaAnAdapter;
-import com.example.coffeehouse.nhom2.model.BanAn;
+import com.example.coffeehouse.nhom2.adapter.DatBanAdapter;
+import com.example.coffeehouse.nhom2.model.TangModel;
 import com.example.coffeehouse.nhom2.model.MyItemDatBan;
 import com.example.coffeehouse.nhom2.unti.Server;
 
@@ -38,14 +38,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class BuatruaFragment extends Fragment {
+public class Tang1Fragment extends Fragment {
     private int idBuaAn = 1;
     private  String IDTK;
     private   String IDNH,IMGNH;
     private  RecyclerView recyBuaTrua;
-    private  ArrayList<BanAn> arrayList;
+    private  ArrayList<TangModel> arrayList;
     private  LinearLayoutManager manager;
-    private  BuaAnAdapter giaReAdapter;
+    private DatBanAdapter giaReAdapter;
     private  RelativeLayout menu_progressbarBtrua;
     private View view;
     @Nullable
@@ -56,7 +56,7 @@ public class BuatruaFragment extends Fragment {
         menu_progressbarBtrua = view.findViewById(R.id.menu_progressbarBtrua);
         arrayList = new ArrayList<>();
         manager = new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false);
-        giaReAdapter = new BuaAnAdapter(arrayList, getActivity());
+        giaReAdapter = new DatBanAdapter(arrayList, getActivity());
         recyBuaTrua.setHasFixedSize(true);
 //        recyBuaTrua.setLayoutManager(manager);
         recyBuaTrua.setLayoutManager(new GridLayoutManager(getActivity(),2));
@@ -70,7 +70,7 @@ public class BuatruaFragment extends Fragment {
         GetData();
         giaReAdapter.setMyItemDatBan(new MyItemDatBan() {
             @Override
-            public void onClick(final BanAn banAn) {
+            public void onClick(final TangModel tangModel) {
                 menu_progressbarBtrua.setVisibility(View.VISIBLE);
                 RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, Server.duongdancheckbanan, new Response.Listener<String>() {
@@ -88,7 +88,7 @@ public class BuatruaFragment extends Fragment {
                                         StringRequest stringRequest = new StringRequest(Request.Method.POST, Server.duongdandatban, new Response.Listener<String>() {
                                             @Override
                                             public void onResponse(String response) {
-                                                PostLS(banAn.getNameNH(),banAn.getSoBan(),banAn.getiD());
+                                                PostLS(tangModel.getNameNH(), tangModel.getSoBan(), tangModel.getiD());
                                             }
                                         }, new Response.ErrorListener() {
                                             @Override
@@ -99,7 +99,7 @@ public class BuatruaFragment extends Fragment {
                                             @Override
                                             protected Map<String, String> getParams() throws AuthFailureError {
                                                 HashMap<String,String> hashMap = new HashMap<>();
-                                                hashMap.put("idbanan",""+banAn.getiD());
+                                                hashMap.put("idbanan",""+ tangModel.getiD());
                                                 hashMap.put("trangthai",""+2);
                                                 return hashMap;
                                             }
@@ -138,7 +138,7 @@ public class BuatruaFragment extends Fragment {
                     @Override
                     protected Map<String, String> getParams() throws AuthFailureError {
                         HashMap<String,String> hashMap = new HashMap<>();
-                        hashMap.put("idbanan",""+banAn.getiD());
+                        hashMap.put("idbanan",""+ tangModel.getiD());
                         return hashMap;
                     }
                 };
@@ -175,7 +175,7 @@ public class BuatruaFragment extends Fragment {
                             nameNH = jsonObject.getString("namenh");
                             imgBuaAn = jsonObject.getString("imgbanan");
                             if (buaAn == 1) {
-                                arrayList.add(new BanAn(iD, iDNhaHang, buaAn, soNguoi, trangThai, soBan, nameNH, imgBuaAn));
+                                arrayList.add(new TangModel(iD, iDNhaHang, buaAn, soNguoi, trangThai, soBan, nameNH, imgBuaAn));
                             }
                             giaReAdapter.notifyDataSetChanged();
                         }

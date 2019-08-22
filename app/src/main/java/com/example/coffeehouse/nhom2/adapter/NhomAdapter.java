@@ -12,14 +12,14 @@ import android.widget.TextView;
 
 import com.example.coffeehouse.nhom2.R;
 import com.example.coffeehouse.nhom2.model.MyItemOnClick;
-import com.example.coffeehouse.nhom2.model.NhaHang;
+import com.example.coffeehouse.nhom2.model.CoffeeHouse;
 import com.example.coffeehouse.nhom2.unti.Server;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class GiaReAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    private  ArrayList<NhaHang> arrayList;
+public class NhomAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+    private  ArrayList<CoffeeHouse> arrayList;
     private  Context context;
     private MyItemOnClick myItemOnClick;
 
@@ -27,7 +27,7 @@ public class GiaReAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         this.myItemOnClick = myItemOnClick;
     }
 
-    public GiaReAdapter(ArrayList<NhaHang> arrayList, Context context) {
+    public NhomAdapter(ArrayList<CoffeeHouse> arrayList, Context context) {
         this.arrayList = arrayList;
         this.context = context;
     }
@@ -42,54 +42,54 @@ public class GiaReAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, final int i) {
-        NhaHang nhaHang = arrayList.get(i);
+        CoffeeHouse coffeeHouse = arrayList.get(i);
         ViewHodel itemHolder = (ViewHodel) viewHolder;
 
-        Picasso.get().load(Server.duongdananh + nhaHang.getImgnhahang())
+        Picasso.get().load(Server.duongdananh + coffeeHouse.getImgnhahang())
                 .placeholder(R.drawable.ic_avatar)
                 .error(R.drawable.ic_avatar)
                 .into(itemHolder.imgItem1);
         itemHolder.tvItem1.setMaxLines(1);
         itemHolder.tvItem1.setEllipsize(TextUtils.TruncateAt.END);
-        itemHolder.tvItem1.setText(nhaHang.getTennhahang());
+        itemHolder.tvItem1.setText(coffeeHouse.getTennhahang());
 
         itemHolder.tvItemDiaChi.setMaxLines(1);
         itemHolder.tvItemDiaChi.setEllipsize(TextUtils.TruncateAt.END);
-        itemHolder.tvItemDiaChi.setText(nhaHang.getDiachi());
+        itemHolder.tvItemDiaChi.setText(coffeeHouse.getDiachi());
 
         itemHolder.tvMonan.setMaxLines(1);
         itemHolder.tvMonan.setEllipsize(TextUtils.TruncateAt.END);
-        itemHolder.tvMonan.setText(nhaHang.getMonan());
+        itemHolder.tvMonan.setText(coffeeHouse.getMonan());
 
-        if (nhaHang.getDanhgia() == 1){
+        if (coffeeHouse.getDanhgia() == 1){
             itemHolder.saoden1.setImageResource(R.drawable.ic_sao);
             itemHolder.saoden2.setImageResource(R.drawable.ic_sao_den);
             itemHolder.saoden3.setImageResource(R.drawable.ic_sao_den);
             itemHolder.saoden4.setImageResource(R.drawable.ic_sao_den);
             itemHolder.saoden5.setImageResource(R.drawable.ic_sao_den);
         }
-        if (nhaHang.getDanhgia() == 2){
+        if (coffeeHouse.getDanhgia() == 2){
             itemHolder.saoden1.setImageResource(R.drawable.ic_sao);
             itemHolder.saoden2.setImageResource(R.drawable.ic_sao);
             itemHolder.saoden3.setImageResource(R.drawable.ic_sao_den);
             itemHolder.saoden4.setImageResource(R.drawable.ic_sao_den);
             itemHolder.saoden5.setImageResource(R.drawable.ic_sao_den);
         }
-        if (nhaHang.getDanhgia() == 3){
+        if (coffeeHouse.getDanhgia() == 3){
             itemHolder.saoden1.setImageResource(R.drawable.ic_sao);
             itemHolder.saoden2.setImageResource(R.drawable.ic_sao);
             itemHolder.saoden3.setImageResource(R.drawable.ic_sao);
             itemHolder.saoden4.setImageResource(R.drawable.ic_sao_den);
             itemHolder.saoden5.setImageResource(R.drawable.ic_sao_den);
         }
-        if (nhaHang.getDanhgia() == 4){
+        if (coffeeHouse.getDanhgia() == 4){
             itemHolder.saoden1.setImageResource(R.drawable.ic_sao);
             itemHolder.saoden2.setImageResource(R.drawable.ic_sao);
             itemHolder.saoden3.setImageResource(R.drawable.ic_sao);
             itemHolder.saoden4.setImageResource(R.drawable.ic_sao);
             itemHolder.saoden5.setImageResource(R.drawable.ic_sao_den);
         }
-        if (nhaHang.getDanhgia() == 5){
+        if (coffeeHouse.getDanhgia() == 5){
             itemHolder.saoden1.setImageResource(R.drawable.ic_sao);
             itemHolder.saoden2.setImageResource(R.drawable.ic_sao);
             itemHolder.saoden3.setImageResource(R.drawable.ic_sao);

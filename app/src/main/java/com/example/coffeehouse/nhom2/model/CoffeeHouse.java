@@ -1,6 +1,6 @@
 package com.example.coffeehouse.nhom2.model;
 
-public class NhaHang {
+public class CoffeeHouse {
     int id;
     String tennhahang;
     String diachi;
@@ -10,7 +10,7 @@ public class NhaHang {
     String imgnhahang;
     String mota;
 
-    public NhaHang(int id, String tennhahang, String diachi, String monan, String giatien, int danhgia, String imgnhahang, String mota) {
+    public CoffeeHouse(int id, String tennhahang, String diachi, String monan, String giatien, int danhgia, String imgnhahang, String mota) {
         this.id = id;
         this.tennhahang = tennhahang;
         this.diachi = diachi;

@@ -17,9 +17,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.coffeehouse.nhom2.adapter.GiaReAdapter;
+import com.example.coffeehouse.nhom2.adapter.NhomAdapter;
 import com.example.coffeehouse.nhom2.model.MyItemOnClick;
-import com.example.coffeehouse.nhom2.model.NhaHang;
 import com.example.coffeehouse.nhom2.unti.Server;
 
 import org.json.JSONArray;
@@ -30,13 +29,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class NhaHang2Activity extends AppCompatActivity {
+public class CoffeeHouse extends AppCompatActivity {
     private RecyclerView recyclerView;
     String solon,sonho;
     private Toolbar toolbar;
-    ArrayList<NhaHang> arrayList;
+    ArrayList<com.example.coffeehouse.nhom2.model.CoffeeHouse> arrayList;
     LinearLayoutManager manager;
-    GiaReAdapter giaReAdapter;
+    NhomAdapter giaReAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,16 +55,16 @@ public class NhaHang2Activity extends AppCompatActivity {
     private void EventOnclick() {
         giaReAdapter.setMyItemOnClick(new MyItemOnClick() {
             @Override
-            public void onClick(NhaHang nhaHang) {
-                Intent intent = new Intent(NhaHang2Activity.this,ChitietActivity.class);
-                intent.putExtra("ID",""+nhaHang.getId());
-                intent.putExtra("TENNH",nhaHang.getTennhahang());
-                intent.putExtra("DIACHINH",nhaHang.getDiachi());
-                intent.putExtra("MONANNH",nhaHang.getMonan());
-                intent.putExtra("GIANH",""+nhaHang.getGiatien());
-                intent.putExtra("DANHGIANH",""+nhaHang.getDanhgia());
-                intent.putExtra("IMGNH",nhaHang.getImgnhahang());
-                intent.putExtra("MOTANH",nhaHang.getMota());
+            public void onClick(com.example.coffeehouse.nhom2.model.CoffeeHouse coffeeHouse) {
+                Intent intent = new Intent(CoffeeHouse.this,ChitietActivity.class);
+                intent.putExtra("ID",""+ coffeeHouse.getId());
+                intent.putExtra("TENNH", coffeeHouse.getTennhahang());
+                intent.putExtra("DIACHINH", coffeeHouse.getDiachi());
+                intent.putExtra("MONANNH", coffeeHouse.getMonan());
+                intent.putExtra("GIANH",""+ coffeeHouse.getGiatien());
+                intent.putExtra("DANHGIANH",""+ coffeeHouse.getDanhgia());
+                intent.putExtra("IMGNH", coffeeHouse.getImgnhahang());
+                intent.putExtra("MOTANH", coffeeHouse.getMota());
                 startActivity(intent);
             }
         });
@@ -88,7 +87,7 @@ public class NhaHang2Activity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         switch (id) {
             case R.id.action_settings:
-                Intent intent = new Intent(NhaHang2Activity.this,YeuthichActivity.class);
+                Intent intent = new Intent(CoffeeHouse.this,YeuthichActivity.class);
                 startActivity(intent);
                 break;
         }
@@ -121,7 +120,7 @@ public class NhaHang2Activity extends AppCompatActivity {
                             danhGia = jsonObject.getInt("danhgia");
                             imgnhahang = jsonObject.getString("imgnhahang");
                             mota = jsonObject.getString("mota");
-                            arrayList.add(new NhaHang(iD,tennhahang,diachi,monan,tien,danhGia,imgnhahang,mota));
+                            arrayList.add(new com.example.coffeehouse.nhom2.model.CoffeeHouse(iD,tennhahang,diachi,monan,tien,danhGia,imgnhahang,mota));
                             giaReAdapter.notifyDataSetChanged();
                         }
                     } catch (JSONException e) {
@@ -150,8 +149,8 @@ public class NhaHang2Activity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyNhahang2);
         toolbar = findViewById(R.id.toolbarNhahang2);
         arrayList = new ArrayList<>();
-        manager = new LinearLayoutManager(NhaHang2Activity.this,LinearLayoutManager.VERTICAL,false);
-        giaReAdapter = new GiaReAdapter(arrayList, NhaHang2Activity.this);
+        manager = new LinearLayoutManager(CoffeeHouse.this,LinearLayoutManager.VERTICAL,false);
+        giaReAdapter = new NhomAdapter(arrayList, CoffeeHouse.this);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(manager);
         recyclerView.setAdapter(giaReAdapter);

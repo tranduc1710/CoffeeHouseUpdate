@@ -26,7 +26,7 @@ import com.squareup.picasso.Picasso;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SuaBanAnActivity extends AppCompatActivity {
+public class SuaBanActivity extends AppCompatActivity {
     private Toolbar toolbarSuaBA;
     private ImageView imgAnhNHSBA;
     private TextView tvNameNHSBA;
@@ -150,7 +150,7 @@ public class SuaBanAnActivity extends AppCompatActivity {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, Server.duongdansuaLSnhieu, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Intent intent = new Intent(SuaBanAnActivity.this, Main2Activity.class);
+                Intent intent = new Intent(SuaBanActivity.this, Main2Activity.class);
                 intent.putExtra("IDNH", "" + IDNH);
                 intent.putExtra("NAMENH", "" + NAMENH);
                 intent.putExtra("IMGNH", IMGBA);

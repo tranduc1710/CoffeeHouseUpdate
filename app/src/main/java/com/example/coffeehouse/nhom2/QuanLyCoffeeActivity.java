@@ -15,9 +15,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.coffeehouse.nhom2.adapter.GiaReAdapter;
+import com.example.coffeehouse.nhom2.adapter.NhomAdapter;
 import com.example.coffeehouse.nhom2.model.MyItemOnClick;
-import com.example.coffeehouse.nhom2.model.NhaHang;
+import com.example.coffeehouse.nhom2.model.CoffeeHouse;
 import com.example.coffeehouse.nhom2.unti.Server;
 
 import org.json.JSONArray;
@@ -26,12 +26,12 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class QuanLyNHActivity extends AppCompatActivity {
+public class QuanLyCoffeeActivity extends AppCompatActivity {
     private Toolbar toolbarQLNH;
     private RecyclerView recyQLNH;
-    ArrayList<NhaHang> arrayList;
+    ArrayList<CoffeeHouse> arrayList;
     LinearLayoutManager manager;
-    GiaReAdapter giaReAdapter;
+    NhomAdapter giaReAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,24 +41,24 @@ public class QuanLyNHActivity extends AppCompatActivity {
         recyQLNH = (RecyclerView) findViewById(R.id.recyQLNH);
         setSupportActionBar(toolbarQLNH);
         arrayList = new ArrayList<>();
-        manager = new LinearLayoutManager(QuanLyNHActivity.this,LinearLayoutManager.VERTICAL,false);
-        giaReAdapter = new GiaReAdapter(arrayList, QuanLyNHActivity.this);
+        manager = new LinearLayoutManager(QuanLyCoffeeActivity.this,LinearLayoutManager.VERTICAL,false);
+        giaReAdapter = new NhomAdapter(arrayList, QuanLyCoffeeActivity.this);
         recyQLNH.setHasFixedSize(true);
         recyQLNH.setLayoutManager(manager);
         recyQLNH.setAdapter(giaReAdapter);
         GetData();
         giaReAdapter.setMyItemOnClick(new MyItemOnClick() {
             @Override
-            public void onClick(NhaHang nhaHang) {
-                Intent intent = new Intent(QuanLyNHActivity.this,ChitietQLNHActivity.class);
-                intent.putExtra("ID",""+nhaHang.getId());
-                intent.putExtra("TENNH",""+nhaHang.getTennhahang());
-                intent.putExtra("DIACHINH",""+nhaHang.getDiachi());
-                intent.putExtra("MONANNH",""+nhaHang.getMonan());
-                intent.putExtra("GIANH",nhaHang.getGiatien());
-                intent.putExtra("DANHGIANH",""+nhaHang.getDanhgia());
-                intent.putExtra("IMGNH",nhaHang.getImgnhahang());
-                intent.putExtra("MOTANH",nhaHang.getMota());
+            public void onClick(CoffeeHouse coffeeHouse) {
+                Intent intent = new Intent(QuanLyCoffeeActivity.this,ChitietQLNHActivity.class);
+                intent.putExtra("ID",""+ coffeeHouse.getId());
+                intent.putExtra("TENNH",""+ coffeeHouse.getTennhahang());
+                intent.putExtra("DIACHINH",""+ coffeeHouse.getDiachi());
+                intent.putExtra("MONANNH",""+ coffeeHouse.getMonan());
+                intent.putExtra("GIANH", coffeeHouse.getGiatien());
+                intent.putExtra("DANHGIANH",""+ coffeeHouse.getDanhgia());
+                intent.putExtra("IMGNH", coffeeHouse.getImgnhahang());
+                intent.putExtra("MOTANH", coffeeHouse.getMota());
                 startActivity(intent);
             }
         });
@@ -90,7 +90,7 @@ public class QuanLyNHActivity extends AppCompatActivity {
                             danhGia = jsonObject.getInt("danhgia");
                             imgnhahang = jsonObject.getString("imgnhahang");
                             mota = jsonObject.getString("mota");
-                            arrayList.add(new NhaHang(iD,tennhahang,diachi,monan,tien,danhGia,imgnhahang,mota));
+                            arrayList.add(new CoffeeHouse(iD,tennhahang,diachi,monan,tien,danhGia,imgnhahang,mota));
                             giaReAdapter.notifyDataSetChanged();
                         }
                     } catch (JSONException e) {
@@ -121,11 +121,11 @@ public class QuanLyNHActivity extends AppCompatActivity {
         int id = item.getItemId();
         switch (id){
             case R.id.itemThemNH:
-                Intent intent = new Intent(QuanLyNHActivity.this,ThemNHActivity.class);
+                Intent intent = new Intent(QuanLyCoffeeActivity.this, ThemCoffeeActivity.class);
                 startActivity(intent);
                 break;
                 case R.id.logout:
-                Intent intent1 = new Intent(QuanLyNHActivity.this,LoginActivity.class);
+                Intent intent1 = new Intent(QuanLyCoffeeActivity.this,LoginActivity.class);
                 startActivity(intent1);
                 break;
         }

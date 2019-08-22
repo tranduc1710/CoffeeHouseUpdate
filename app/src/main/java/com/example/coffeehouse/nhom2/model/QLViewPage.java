@@ -6,8 +6,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import com.example.coffeehouse.nhom2.Main2Activity;
-import com.example.coffeehouse.nhom2.fragment.QLBuaToiFragemnt;
-import com.example.coffeehouse.nhom2.fragment.QLBuatruaFragment;
+import com.example.coffeehouse.nhom2.fragment.QLTang2Fragemnt;
+import com.example.coffeehouse.nhom2.fragment.QLTang1Fragment;
 
 public class QLViewPage extends FragmentPagerAdapter {
     String IDNH,IMGNH;
@@ -24,14 +24,14 @@ public class QLViewPage extends FragmentPagerAdapter {
         IMGNH = Main2Activity.IMGNH;
         switch (i){
             case 0:
-                QLBuatruaFragment buatruaFragment = new QLBuatruaFragment();
+                QLTang1Fragment buatruaFragment = new QLTang1Fragment();
                 bundle = new Bundle();
                 bundle.putString("IDNH",IDNH);
                 bundle.putString("IMGNH",IMGNH);
                 buatruaFragment.setArguments(bundle);
                 return buatruaFragment;
             case 1:
-                QLBuaToiFragemnt buaToiFragemnt = new QLBuaToiFragemnt();
+                QLTang2Fragemnt buaToiFragemnt = new QLTang2Fragemnt();
                 bundle = new Bundle();
                 bundle.putString("IDNH",IDNH);
                 bundle.putString("IMGNH",IMGNH);

@@ -37,7 +37,7 @@ import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SuaNHActivity extends AppCompatActivity {
+public class SuaTangActivity extends AppCompatActivity {
     private Toolbar toolbarSuaNH;
     private ImageView imgAnhSuaNH;
     private ImageView imgThemAnhSuaNH;
@@ -81,7 +81,7 @@ public class SuaNHActivity extends AppCompatActivity {
         imgThemAnhSuaNH.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ActivityCompat.requestPermissions(SuaNHActivity.this,
+                ActivityCompat.requestPermissions(SuaTangActivity.this,
                         new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},REQUET_FODER);
             }
         });
@@ -115,7 +115,7 @@ public class SuaNHActivity extends AppCompatActivity {
                     StringRequest stringRequest = new StringRequest(Request.Method.POST, Server.duongdansuaNH, new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
-                            Intent intent = new Intent(SuaNHActivity.this,QuanLyNHActivity.class);
+                            Intent intent = new Intent(SuaTangActivity.this, QuanLyCoffeeActivity.class);
                             startActivity(intent);
                             relativeLayout.setVisibility(View.GONE);
                         }
@@ -127,7 +127,7 @@ public class SuaNHActivity extends AppCompatActivity {
                             StringRequest stringRequest = new StringRequest(Request.Method.POST, Server.duongdansuaNH, new Response.Listener<String>() {
                                 @Override
                                 public void onResponse(String response) {
-                                    Intent intent = new Intent(SuaNHActivity.this,QuanLyNHActivity.class);
+                                    Intent intent = new Intent(SuaTangActivity.this, QuanLyCoffeeActivity.class);
                                     startActivity(intent);
                                     relativeLayout.setVisibility(View.GONE);
                                 }

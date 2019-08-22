@@ -7,8 +7,8 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 
 import com.example.coffeehouse.nhom2.DatBanActivity;
-import com.example.coffeehouse.nhom2.fragment.BuaToiFragemnt;
-import com.example.coffeehouse.nhom2.fragment.BuatruaFragment;
+import com.example.coffeehouse.nhom2.fragment.Tang2Fragemnt;
+import com.example.coffeehouse.nhom2.fragment.Tang1Fragment;
 
 public class ViewPage extends FragmentPagerAdapter {
     String IDNH,IMGNH;
@@ -25,14 +25,14 @@ public class ViewPage extends FragmentPagerAdapter {
         IMGNH = DatBanActivity.IMGNH;
         switch (i){
             case 0:
-                BuatruaFragment buatruaFragment = new BuatruaFragment();
+                Tang1Fragment buatruaFragment = new Tang1Fragment();
                 bundle = new Bundle();
                 bundle.putString("IDNH",IDNH);
 //                bundle.putString("IMGNH",IMGNH);
                 buatruaFragment.setArguments(bundle);
                 return buatruaFragment;
             case 1:
-                BuaToiFragemnt buaToiFragemnt = new BuaToiFragemnt();
+                Tang2Fragemnt buaToiFragemnt = new Tang2Fragemnt();
                 bundle = new Bundle();
 //                bundle.putString("IDNH",IDNH);
                 bundle.putString("IMGNH",IMGNH);

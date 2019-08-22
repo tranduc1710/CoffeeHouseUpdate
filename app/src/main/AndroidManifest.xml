@@ -18,14 +18,14 @@
         <activity android:name=".SuaThongtinActivity" />
         <activity android:name=".DoiMKActivity" />
         <activity android:name=".DangKyActivity" />
-        <activity android:name=".SuaBanAnActivity" />
-        <activity android:name=".ThemBanActivity" />
+        <activity android:name=".SuaBanActivity" />
+        <activity android:name=".ThemTangActivity" />
         <activity android:name=".QuanLyLichsuActivity" />
         <activity android:name=".Main2Activity" />
-        <activity android:name=".SuaNHActivity" />
-        <activity android:name=".ThemNHActivity" />
+        <activity android:name=".SuaTangActivity" />
+        <activity android:name=".ThemCoffeeActivity" />
         <activity android:name=".ChitietQLNHActivity" />
-        <activity android:name=".QuanLyNHActivity" />
+        <activity android:name=".QuanLyCoffeeActivity" />
         <activity android:name=".LichSuActivity" />
         <activity
             android:name=".ManHinhChoActivity"
@@ -40,7 +40,7 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".QuangCaoActivity" />
-        <activity android:name=".NhaHang2Activity" />
+        <activity android:name=".CoffeeHouse" />
         <activity android:name=".ChitietActivity" />
         <activity android:name=".YeuthichActivity" />
         <activity android:name=".DatBanActivity" />

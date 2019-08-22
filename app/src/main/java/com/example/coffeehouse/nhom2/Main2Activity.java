@@ -68,7 +68,7 @@ public class Main2Activity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.itemThemBan:
-                Intent intent1 = new Intent(Main2Activity.this,ThemBanActivity.class);
+                Intent intent1 = new Intent(Main2Activity.this, ThemTangActivity.class);
                 startActivity(intent1);
                 break;
         }

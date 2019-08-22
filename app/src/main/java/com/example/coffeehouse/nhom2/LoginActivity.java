@@ -2,12 +2,10 @@ package com.example.coffeehouse.nhom2;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
-import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
@@ -79,7 +77,7 @@ public class LoginActivity extends AppCompatActivity {
                                     if (taikhoan.equals(username) && matkhau.equals(password)) {
                                         if (taikhoan.equals("admin") && matkhau.equals("admin")) {
                                             finish();
-                                            Intent intent = new Intent(LoginActivity.this, QuanLyNHActivity.class);
+                                            Intent intent = new Intent(LoginActivity.this, QuanLyCoffeeActivity.class);
                                             startActivity(intent);
                                             menu_progressbar.setVisibility(View.GONE);
                                             return;

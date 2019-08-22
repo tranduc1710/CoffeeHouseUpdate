@@ -1,6 +1,6 @@
 package com.example.coffeehouse.nhom2.model;
 
-public class BanAn {
+public class TangModel {
     int iD;
     int iDNhaHang;
     int buaAn;
@@ -10,7 +10,7 @@ public class BanAn {
     String nameNH;
     String imgBuaAn;
 
-    public BanAn(int iD, int iDNhaHang, int buaAn, int soNguoi, int trangThai, int soBan, String nameNH, String imgBuaAn) {
+    public TangModel(int iD, int iDNhaHang, int buaAn, int soNguoi, int trangThai, int soBan, String nameNH, String imgBuaAn) {
         this.iD = iD;
         this.iDNhaHang = iDNhaHang;
         this.buaAn = buaAn;

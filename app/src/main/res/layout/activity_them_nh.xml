@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:background="@drawable/bg1"
     android:layout_height="match_parent"
-    tools:context=".ThemNHActivity">
+    tools:context=".ThemCoffeeActivity">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">

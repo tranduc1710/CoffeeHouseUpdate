@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.coffeehouse.nhom2.R;
-import com.example.coffeehouse.nhom2.model.BanAn;
+import com.example.coffeehouse.nhom2.model.TangModel;
 import com.example.coffeehouse.nhom2.model.MySuaBan;
 import com.example.coffeehouse.nhom2.model.MyXoaBA;
 import com.example.coffeehouse.nhom2.unti.Server;
@@ -21,13 +21,13 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class QLBuaAnAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class QLCoffeeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private Context context;
-    private ArrayList<BanAn> arrayList;
+    private ArrayList<TangModel> arrayList;
     private MyXoaBA myXoaBA;
     private MySuaBan mySuaBan;
 
-    public QLBuaAnAdapter(Context context, ArrayList<BanAn> arrayList) {
+    public QLCoffeeAdapter(Context context, ArrayList<TangModel> arrayList) {
         this.context = context;
         this.arrayList = arrayList;
     }
@@ -50,13 +50,13 @@ public class QLBuaAnAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, final int i) {
-        BanAn banAn = arrayList.get(i);
+        TangModel tangModel = arrayList.get(i);
         ViewHodel itemHodel = (ViewHodel) viewHolder;
-        Picasso.get().load(Server.duongdananh + banAn.getImgBuaAn()).placeholder(R.drawable.ic_avatar)
+        Picasso.get().load(Server.duongdananh + tangModel.getImgBuaAn()).placeholder(R.drawable.ic_avatar)
                 .error(R.drawable.ic_avatar).into(itemHodel.imgQLBanan);
-        itemHodel.tvQLNhaHangBa.setText(banAn.getNameNH());
-//        itemHodel.tvQLNameBan.setText("Loại : "+banAn.getSoBan());
-        itemHodel.tvQLSoNguoi.setText(banAn.getSoNguoi()+" người");
+        itemHodel.tvQLNhaHangBa.setText(tangModel.getNameNH());
+//        itemHodel.tvQLNameBan.setText("Loại : "+tangModel.getSoBan());
+        itemHodel.tvQLSoNguoi.setText(tangModel.getSoNguoi()+" người");
 
             itemHodel.btnSuaBan.setOnClickListener(new View.OnClickListener() {
                 @Override

@@ -13,19 +13,19 @@ import android.widget.TextView;
 
 
 import com.example.coffeehouse.nhom2.R;
-import com.example.coffeehouse.nhom2.model.BanAn;
+import com.example.coffeehouse.nhom2.model.TangModel;
 import com.example.coffeehouse.nhom2.model.MyItemDatBan;
 import com.example.coffeehouse.nhom2.unti.Server;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class BuaAnAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    private  ArrayList<BanAn> arrayList;
+public class DatBanAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+    private  ArrayList<TangModel> arrayList;
     private   Context context;
     private  MyItemDatBan myItemDatBan;
 
-    public BuaAnAdapter(ArrayList<BanAn> arrayList, Context context) {
+    public DatBanAdapter(ArrayList<TangModel> arrayList, Context context) {
         this.arrayList = arrayList;
         this.context = context;
     }
@@ -44,17 +44,17 @@ public class BuaAnAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, final int i) {
-        final BanAn banAn = arrayList.get(i);
+        final TangModel tangModel = arrayList.get(i);
         final ViewHodelok itemHoldel = (ViewHodelok) viewHolder;
-        Picasso.get().load(Server.duongdananh + banAn.getImgBuaAn())
+        Picasso.get().load(Server.duongdananh + tangModel.getImgBuaAn())
                 .placeholder(R.drawable.ic_avatar)
                 .error(R.drawable.ic_avatar)
                 .into(itemHoldel.imgNH);
-        itemHoldel.tvNameNH.setText(""+banAn.getNameNH());
-        itemHoldel.tvSoBan.setText("Loại : "+banAn.getSoBan());
-        itemHoldel.tvSonguoi.setText(banAn.getSoNguoi()+" người");
+        itemHoldel.tvNameNH.setText(""+ tangModel.getNameNH());
+        itemHoldel.tvSoBan.setText("Loại : "+ tangModel.getSoBan());
+        itemHoldel.tvSonguoi.setText(tangModel.getSoNguoi()+" người");
 
-        if (banAn.getTrangThai() == 1){
+        if (tangModel.getTrangThai() == 1){
             itemHoldel.btnNH.setBackgroundColor(0xCC00CC00);
             itemHoldel.btnNH.setText("Đặt bàn");
             itemHoldel.btnNH.setOnClickListener(new View.OnClickListener() {
@@ -65,7 +65,7 @@ public class BuaAnAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             });
 
         }
-        if (banAn.getTrangThai() == 2){
+        if (tangModel.getTrangThai() == 2){
             itemHoldel.btnNH.setBackgroundColor(0xFFFF0000);
             itemHoldel.btnNH.setText("Đã Đặt");
             itemHoldel.btnNH.setOnClickListener(new View.OnClickListener() {
