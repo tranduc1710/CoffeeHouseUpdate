@@ -8,6 +8,7 @@
     <RelativeLayout
         android:background="@drawable/bg1"
         android:layout_width="245dp"
+        android:layout_margin="5dp"
         android:layout_height="245dp">
 
         <de.hdodenhof.circleimageview.CircleImageView

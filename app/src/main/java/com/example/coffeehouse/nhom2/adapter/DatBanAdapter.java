@@ -22,7 +22,7 @@ import java.util.ArrayList;
 
 public class DatBanAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private  ArrayList<TangModel> arrayList;
-    private   Context context;
+    private  Context context;
     private  MyItemDatBan myItemDatBan;
 
     public DatBanAdapter(ArrayList<TangModel> arrayList, Context context) {
